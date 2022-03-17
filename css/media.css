@@ -249,6 +249,19 @@
 	.cert .pict, .prom .pict, .service .pict {
 		order: 1;
 	}
+	main .main-filter {
+		background-image: -webkit-linear-gradient(right, transparent, rgba(152, 123, 26, 0.9), transparent);
+		background-image: linear-gradient(to right, transparent, rgba(152, 123, 26, 0.9), transparent);
+	}
+	main iframe {
+		display: none;
+	}
+	main {
+		background-image: url("../img/main-bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-bottom: 20px;
+	}
 }
 
 /* Extra Small Devices, Phones */
@@ -319,15 +332,27 @@
 	.special .form button {
 		margin-top: 0;
 	}
+	h1 {
+		font-size: 30px;
+	}
+	.trigger li {
+		font-size: 14px;
+	}
+	h2 {
+		font-size: 18px;
+	}
 }
 
 @media only screen and (max-width : 380px) {
 	h1 {
-		font-size: 2.4rem;
-		line-height: 3.4rem;
+		font-size: 30px;
+		line-height: 35px;
 	}
 	section h3 {
-		font-size: 2.4rem;
+		font-size: 18px;
+	}
+	.btn-main {
+		font-size: 12px;
 	}
 }
 

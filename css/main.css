@@ -397,9 +397,6 @@ label.error {
 }
 header {
 	padding-top: 12px;
-	background-image: url("../img/header_bg.jpg");
-	background-repeat: no-repeat;
-	background-position: center top;
 	height: 88px;
 	background-color: #000;
 	position: relative;
@@ -495,7 +492,7 @@ main .main-filter {
 	top: 0;
 	left: 0;
 	z-index: 1;
-	background-image: -webkit-linear-gradient(right, rgba(141, 86, 174, 0.5), rgba(141, 86, 174, 0.5));
+	background-image: -webkit-linear-gradient(right, transparent, rgba(141, 86, 174, 0.5), transparent);
 	background-image: linear-gradient(to right, transparent, rgba(141, 86, 174, 0.549), transparent);
 }
 main .main h2,

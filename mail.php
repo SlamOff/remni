@@ -46,7 +46,6 @@
         $mail->AltBody = $noHTMLmessage;
 
         $mail->send();
-        echo $_SERVER["HTTP_REFERER"];
         if($_SERVER["HTTP_REFERER"] === "http://kremen-remni.com.ua/") {
             echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
         } else {

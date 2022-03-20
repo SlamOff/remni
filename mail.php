@@ -11,16 +11,18 @@
     $mail = new PHPMailer(true);
     $subject = 'Заявка с лендинга';
     $message = "<table style='width: 100%;'>$message</table>";
+    $noHTMLmessage = "";
 
     try {
         foreach ( $_POST as $key => $value ) {
             if ( $value != "" ) {
+                $noHTMLmessage .= "$key: $value \n";
                 $message .= "
                 " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-                <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
-                <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
-            </tr>
-            ";
+                    <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+                    <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+                </tr>
+                ";
             }
         }
         //Server settings
@@ -34,25 +36,17 @@
         $mail->Port       = 465;
 
         //Recipients
-        $mail->setFrom('kremen.lendos@gmail.com', $subject);
+        $mail->setFrom('kremen.lendos@gmail.com', adopt($subject));
         $mail->addAddress('kremen.lendos@gmail.com', 'Serhii');
-        //$mail->addAddress('vetalsd2@gmail.com');               //Name is optional
-        // $mail->addReplyTo('info@example.com', 'Information');
-        // $mail->addCC('cc@example.com');
-        // $mail->addBCC('bcc@example.com');
-
-        //Attachments
-        // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
         //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->isHTML(true);
         $mail->Subject = adopt($subject);
         $mail->Body    = $message;
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->AltBody = $noHTMLmessage;
 
         $mail->send();
-        echo $_SERVER['REQUEST_METHOD'];
+        echo $_SERVER["HTTP_REFERER"];
         //echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
     } catch (Exception $e) {
         echo "Ошибка: {$mail->ErrorInfo}";

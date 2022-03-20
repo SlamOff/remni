@@ -27,7 +27,7 @@
             }
         }
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
@@ -43,7 +43,7 @@
         //Content
         $mail->isHTML(true);
         $mail->Subject = adopt($subject);
-        $mail->Body    = $noHTMLmessage;
+        $mail->Body    = $message;
         $mail->AltBody = $noHTMLmessage;
 
         $mail->send();

@@ -436,11 +436,17 @@ header .top_head {
 }
 .lang:hover {
 	background-color: #fff;
-    color: #000000;
+    color: #000;
+}
+.lang:focus {
+    color: #fff;
 }
 .logo img {
 	width: 100%;
 	max-width: 100px;
+}
+.lang:focus:hover {
+	color: #000;
 }
 h1 {
 	font-size: 4.8rem;

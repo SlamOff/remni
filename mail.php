@@ -34,7 +34,7 @@
         $mail->Port       = 465;
 
         //Recipients
-        $mail->setFrom($subject);
+        $mail->setFrom('kremen.lendos@gmail.com', $subject);
         $mail->addAddress('kremen.lendos@gmail.com', 'Serhii');
         //$mail->addAddress('vetalsd2@gmail.com');               //Name is optional
         // $mail->addReplyTo('info@example.com', 'Information');

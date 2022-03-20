@@ -9,7 +9,7 @@
     }
     $c = true;
     $mail = new PHPMailer(true);
-    $subject = 'Заявка с лендинга';
+    $subject = 'Заявка с лендинга Kremen';
     $message = "<table style='width: 100%;'>$message</table>";
     $noHTMLmessage = "";
 
@@ -42,12 +42,16 @@
         //Content
         $mail->isHTML(true);
         $mail->Subject = adopt($subject);
-        $mail->Body    = $message;
+        $mail->Body    = $noHTMLmessage;
         $mail->AltBody = $noHTMLmessage;
 
         $mail->send();
         echo $_SERVER["HTTP_REFERER"];
-        //echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
+        if($_SERVER["HTTP_REFERER"] === "http://kremen-remni.com.ua/") {
+            echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
+        } else {
+            echo '<meta http-equiv="refresh" content="0; url=thanks-ua.html" />';
+        }
     } catch (Exception $e) {
         echo "Ошибка: {$mail->ErrorInfo}";
     }

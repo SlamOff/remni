@@ -10,7 +10,7 @@
     $c = true;
     $mail = new PHPMailer(true);
     $subject = 'Заявка с лендинга Kremen';
-    $message = "<table style='width: 100%;'>$message</table>";
+    $message = "<table style='width: 100%;'>$message";
     $noHTMLmessage = "";
 
     try {
@@ -41,7 +41,7 @@
                     ";
             }
         }
-        $message .= '<br><b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
+        $message .= '</table><br><b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
         
         //Server settings
         //$mail->SMTPDebug = SMTP::DEBUG_SERVER;

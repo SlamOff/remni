@@ -19,6 +19,9 @@ p {
 .mfp-close-btn-in .mfp-close {
 	color: #fff!important;
 }
+.politics .mfp-close-btn-in .mfp-close {
+	color: #333!important;
+}
 .next, .prev {
 	position: absolute;
 	width: 50px;

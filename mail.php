@@ -35,7 +35,7 @@
             
             if ( $key != "" ) {
                 var_dump($key);
-                foreach ( explode("&", $key) as $keey ) {
+                foreach ( explode("=", $key) as $keey ) {
                     var_dump($keey);
                 }
             }

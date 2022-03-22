@@ -32,8 +32,10 @@
         $utms = explode("&", parse_url($url, PHP_URL_QUERY));
 
         foreach ( $utms as $utm => $value ) {
-            var_dump($utm);
-            var_dump($value);
+            if ( $value != "" ) {
+                var_dump($utm);
+                var_dump($value);
+            }
         }
         
         //Server settings

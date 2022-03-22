@@ -28,10 +28,10 @@
         }
         $message .= '<b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
         // "utm_source=kon_fb01.22&utm_medium=ll2%_int_opt&utm_campaign=din_kreativ"
-        //$utms = explode("&", parse_url($url, PHP_URL_QUERY));
+        $utms = explode("&", parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY));
         // var_dump($utms[0]);
 
-        foreach ( explode("&", parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY)) as $key => $value ) {
+        foreach ( $utms as $key => $value ) {
                 
             $message .= "
             " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "

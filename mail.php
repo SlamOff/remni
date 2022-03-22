@@ -32,17 +32,18 @@
         //var_dump($utms);
 
         foreach ( $utms as $key ) {
-            
+            var_dump(explode("=", $key)[0]);
+            var_dump(explode("=", $key)[1]);
             if ( $key != "" ) {
-                foreach ( explode("=", $key) as $keyInner ) {
-                    var_dump($keey);
-                    $message .= "
-                    " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-                        <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>".$keyInner[0]."</b></td>
-                        <td style='padding: 10px; border: #e9e9e9 1px solid;'>".$keyInner[1]."</td>
-                    </tr>
-                    ";
-                }
+                // foreach ( explode("=", $key) as $keyInner ) {
+                //     var_dump($keey);
+                //     $message .= "
+                //     " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+                //         <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>".$keyInner[0]."</b></td>
+                //         <td style='padding: 10px; border: #e9e9e9 1px solid;'>".$keyInner[1]."</td>
+                //     </tr>
+                //     ";
+                // }
             }
             
         }

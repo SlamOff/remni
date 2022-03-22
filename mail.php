@@ -31,14 +31,14 @@
         $utms = explode("&", parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY));
         //var_dump($utms);
 
-        foreach ( $utms as $key => $value ) {
-                
-            $message .= "
-            " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-                <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
-                <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
-            </tr>
-            ";
+        foreach ( $utms as $key ) {
+            echo $key;
+            // $message .= "
+            // " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+            //     <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+            //     <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+            // </tr>
+            // ";
         }
         $message .= '<br><b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
         

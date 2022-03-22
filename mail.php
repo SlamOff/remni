@@ -34,8 +34,12 @@
 
         foreach ( $utms as $utm => $val ) {
             if ( $val != "" ) {
-                var_dump($utm);
-                var_dump($val);
+                $message .= "
+                " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+                    <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$utm</b></td>
+                    <td style='padding: 10px; border: #e9e9e9 1px solid;'>$val</td>
+                </tr>
+                ";
             }
         }
         

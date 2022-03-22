@@ -19,7 +19,7 @@ p {
 .mfp-close-btn-in .mfp-close {
 	color: #fff!important;
 }
-.politics .mfp-close-btn-in .mfp-close {
+.mfp-close-btn-in .politics .mfp-close {
 	color: #333!important;
 }
 .next, .prev {

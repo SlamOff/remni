@@ -33,7 +33,7 @@
         // var_dump($utms[0]);
 
         foreach ( $utms as $utm => $val ) {
-            if ( $value != "" ) {
+            if ( $val != "" ) {
                 var_dump($utm);
                 var_dump($val);
             }

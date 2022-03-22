@@ -27,7 +27,7 @@
             }
         }
         $message .= '<b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
-        var_dump(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH));
+        var_dump(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY));
         //Server settings
         //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();
@@ -49,7 +49,7 @@
         $mail->AltBody = $noHTMLmessage;
 
         $mail->send();
-        // if($_SERVER["HTTP_REFERER"] === "http://kremen-remni.com.ua/") {
+        // if(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH) === "/") {
         //     echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
         // } else {
         //     echo '<meta http-equiv="refresh" content="0; url=thanks-ua.html" />';

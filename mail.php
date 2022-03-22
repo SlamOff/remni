@@ -20,16 +20,14 @@
                 
                 $message .= "
                 " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-                    <td style='padding: 10px; border: #e9e9e9 1px solid;width:150px;'><b>$key</b></td>
+                    <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
                     <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
                 </tr>
                 ";
             }
         }
         
-        // "utm_source=kon_fb01.22&utm_medium=ll2%_int_opt&utm_campaign=din_kreativ"
         $utms = explode("&", parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY));
-        //var_dump($utms);
 
         foreach ( $utms as $key ) {
             if ( $key != "" ) {
@@ -64,11 +62,11 @@
         $mail->AltBody = $noHTMLmessage;
 
         $mail->send();
-        // if(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH) === "/") {
-        //     echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
-        // } else {
-        //     echo '<meta http-equiv="refresh" content="0; url=thanks-ua.html" />';
-        // }
+        if(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH) === "/") {
+            echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
+        } else {
+            echo '<meta http-equiv="refresh" content="0; url=thanks-ua.html" />';
+        }
     } catch (Exception $e) {
         echo "Ошибка: {$mail->ErrorInfo}";
     }

@@ -27,7 +27,14 @@
             }
         }
         $message .= '<b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
-        var_dump(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY));
+        // "utm_source=kon_fb01.22&utm_medium=ll2%_int_opt&utm_campaign=din_kreativ"
+        $utms = explode("&", parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY));
+
+        foreach ( $utms as $utm => $value ) {
+            var_dump($utm);
+            var_dump($value);
+        }
+        
         //Server settings
         //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();

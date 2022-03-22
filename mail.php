@@ -27,7 +27,7 @@
             }
         }
         $message .= '<b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
-        var_dump(parse_url($_SERVER["HTTP_REFERER"]));
+        var_dump(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH));
         //Server settings
         //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();

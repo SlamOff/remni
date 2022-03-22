@@ -12,6 +12,7 @@
     $subject = 'Заявка с лендинга Kremen';
     $message = "<table style='width: 100%;'>$message</table>";
     $noHTMLmessage = "";
+    $url = $_SERVER["HTTP_REFERER"];
 
     try {
         foreach ( $_POST as $key => $value ) {
@@ -28,7 +29,7 @@
         }
         $message .= '<b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
         // "utm_source=kon_fb01.22&utm_medium=ll2%_int_opt&utm_campaign=din_kreativ"
-        $utms = explode("&", parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY));
+        $utms = explode("&", parse_url($url, PHP_URL_QUERY));
 
         foreach ( $utms as $utm => $value ) {
             var_dump($utm);
@@ -56,7 +57,7 @@
         $mail->AltBody = $noHTMLmessage;
 
         $mail->send();
-        // if(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH) === "/") {
+        // if(parse_url($url, PHP_URL_PATH) === "/") {
         //     echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
         // } else {
         //     echo '<meta http-equiv="refresh" content="0; url=thanks-ua.html" />';

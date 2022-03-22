@@ -29,7 +29,7 @@
         
         // "utm_source=kon_fb01.22&utm_medium=ll2%_int_opt&utm_campaign=din_kreativ"
         $utms = explode("&", parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY));
-        var_dump($utms);
+        //var_dump($utms);
 
         foreach ( $utms as $key => $value ) {
                 

@@ -35,6 +35,9 @@
             
             if ( $key != "" ) {
                 var_dump($key);
+                foreach ( explode("&", $key) as $keey ) {
+                    var_dump($keey);
+                }
             }
             // $message .= "
             // " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "

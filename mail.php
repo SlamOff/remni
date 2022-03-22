@@ -26,10 +26,10 @@
                 ";
             }
         }
-        $message .= '<b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
+        
         // "utm_source=kon_fb01.22&utm_medium=ll2%_int_opt&utm_campaign=din_kreativ"
         $utms = explode("&", parse_url($_SERVER["HTTP_REFERER"], PHP_URL_QUERY));
-        // var_dump($utms[0]);
+        var_dump($utms);
 
         foreach ( $utms as $key => $value ) {
                 
@@ -40,6 +40,7 @@
             </tr>
             ";
         }
+        $message .= '<br><b>Заявка пришла со страницы:</b> ' . $_SERVER["HTTP_REFERER"] .'<br>';
         
         //Server settings
         //$mail->SMTPDebug = SMTP::DEBUG_SERVER;

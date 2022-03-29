@@ -73,18 +73,26 @@ $(document).ready(function() {
 	});
 	
 	//validation
-		var locationURL = window.location.search;
-	if ( locationURL == "?p=179&lang=ua" ) {
+		var locationURL = window.location.pathname;
+	if (locationURL == "/ua.html") {
 		var validationName = "Обов'язково для заповнення";
-		var validationNameMax = "Від 2 до 16 літер";
+		var validationNameMax = "Введіть правильне ім'я";
 		var validationPhone = "Введіть вірний номер";
-		var validationEmail = "Введіть вірний E-mail";
+	}
+	else if (locationURL == "/en.html") {
+		var validationName = "Required to fill";
+		var validationNameMax = "Please enter a valid name";
+		var validationPhone = "Please enter a valid number";
+	}
+	else if (locationURL == "/pl.html") {
+		var validationName = "Wymagane do wypełnienia";
+		var validationNameMax = "Proszę wpisać prawidłowe imię";
+		var validationPhone = "Proszę wprowadzić poprawny numer";
 	}
 	else {
 		var validationName = "Обязательно для заполнения";
-		var validationNameMax = "От 2 до 16 букв";
+		var validationNameMax = "Введите корректное имя";
 		var validationPhone = "Введите корректный номер";
-		var validationEmail = "Введите корректный E-mail";
 	}
 
 

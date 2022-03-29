@@ -63,10 +63,14 @@
         $mail->AltBody = $noHTMLmessage;
 
         $mail->send();
-        if(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH) === "/") {
-            echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
-        } else {
+        if(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH) === "/ua.html") {
             echo '<meta http-equiv="refresh" content="0; url=thanks-ua.html" />';
+        } else if(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH) === "/en.html") {
+            echo '<meta http-equiv="refresh" content="0; url=thanks-en.html" />';
+        } else if(parse_url($_SERVER["HTTP_REFERER"], PHP_URL_PATH) === "/pl.html") {
+            echo '<meta http-equiv="refresh" content="0; url=thanks-pl.html" />';
+        } else {
+            echo '<meta http-equiv="refresh" content="0; url=thanks.html" />';
         }
     } catch (Exception $e) {
         echo "Ошибка: {$mail->ErrorInfo}";

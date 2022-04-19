@@ -26,11 +26,6 @@ $(document).ready(function() {
 		type: 'inline'
 	});
 
-	//mask
-	jQuery(function($){
-		$('.phone').mask('+38(099) 999-9999');
-	});
-
 
 	$('.video img').on('click', removePoster);
 	$('.video svg').on('click', removePoster);
@@ -73,27 +68,37 @@ $(document).ready(function() {
 	});
 	
 	//validation
-		var locationURL = window.location.pathname;
+	var locationURL = window.location.pathname;
+	var maskString = '';
 	if (locationURL == "/ua.html") {
 		var validationName = "Обов'язково для заповнення";
 		var validationNameMax = "Введіть правильне ім'я";
 		var validationPhone = "Введіть вірний номер";
+		maskString = '+38(999) 999-9999';
 	}
 	else if (locationURL == "/en.html") {
 		var validationName = "Required to fill";
 		var validationNameMax = "Please enter a valid name";
 		var validationPhone = "Please enter a valid number";
+		maskString = '+999999999999999';
 	}
 	else if (locationURL == "/pl.html") {
 		var validationName = "Wymagane do wypełnienia";
 		var validationNameMax = "Proszę wpisać prawidłowe imię";
 		var validationPhone = "Proszę wprowadzić poprawny numer";
+		maskString = '+999999999999999';
 	}
 	else {
 		var validationName = "Обязательно для заполнения";
 		var validationNameMax = "Введите корректное имя";
 		var validationPhone = "Введите корректный номер";
+		maskString = '+38(999) 999-9999';
 	}
+
+	//mask
+	jQuery(function($){
+		$('.phone').mask(maskString);
+	});
 
 
 	$('#topForm1').validate({
